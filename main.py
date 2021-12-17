@@ -72,12 +72,12 @@ def download_file(url):
     driver.get(download_button_href)
         
 
-# def enable_download_in_headless_chrome( driver, download_dir):
-#     # add missing support for chrome "send_command"  to selenium webdriver
-#     driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
+def enable_download_in_headless_chrome( driver, download_dir):
+    # add missing support for chrome "send_command"  to selenium webdriver
+    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
 
-#     params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_dir}}
-#     command_result = driver.execute("send_command", params)
+    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_dir}}
+    command_result = driver.execute("send_command", params)
 
 # enable_download_in_headless_chrome(driver, os.getcwd())
 # files_dict = [{'filename': '1. Linear Search Algorithm.mp4', 'link': 'https://www120.zippyshare.com/v/x6NkK8E8/file.html', 'upload_date': '17/12/2021 02:07:28'}, 
